@@ -1,0 +1,59 @@
+@import "dependencies/x-editable.min";
+@import "../global/fonts";
+@import "../global/colors";
+@import "bourbon";
+
+span.editable-clear-x {
+    margin-top: -5px;
+}
+.editable-container.editable-inline .editable-buttons{
+    margin-left:1em;
+}
+.editable-container.editable-inline .editable-buttons button {
+    margin-left:0;
+}
+
+
+.editable-container + a.fa-pencil {
+    display: none;
+}
+
+.settings_title_edit{
+    font-size:1.5em;
+    margin-left:0.75em;
+    color:$dpp-primary;
+}
+.settings_title_edit:hover{
+    text-decoration:none;
+    color: shade($dpp-primary, 5%);
+}
+
+.editable-container .editableform .form-control {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #2a9dc9;
+    border-bottom-style: dashed;
+    font-size: 2em;
+    font-weight: 300;
+    color: black;
+    font-family: $open-sans;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    display: inline;
+    line-height:0;
+    border-radius:0;
+}
+.editable-container.editable-inline .editable-buttons button.btn-primary{
+    background-color:$dpp-primary;
+    outline:none;
+    color:$white;
+    border: 1px solid darken($dpp-primary, 10%);
+    @include transition(0.2s ease all);
+    
+}
+.editable-container.editable-inline .editable-buttons button.btn-primary:hover{
+    background-color:shade($dpp-primary, 5%);
+    border:1px solid shade($dpp-primary, 10%);
+    @include transition(0.2s ease all);
+}

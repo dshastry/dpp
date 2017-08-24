@@ -1,0 +1,93 @@
+@import "../global/colors";
+@import "bourbon";
+ 
+/**Dependencies**/
+    //Import Bootstrap Manually Into Your Module
+    @import "dependencies/bootstrap-toggle.min";
+
+/**Bootstrap Toggle Plugin**/
+.toggle{
+    overflow:hidden;
+}
+.toggle-group{
+    @include transition(all 0.5s easeInOutQuint all);
+}
+.toggle-group label {
+    margin-top: 0;
+    color: $white;
+} 
+.toggle.btn {
+    padding: 0 3.5em;
+    min-width: 59px;
+    min-height: 34px;
+    max-width: 110px;
+}
+.toggle .toggle-group label.btn {
+    @include transition(0.25s cubic-bezier(0.19, 1, 0.22, 1) all);
+}
+    
+.toggle, .toggle-on, .toggle-off {
+    border-radius: 60px;
+}
+
+.toggle .toggle-handle {
+    border-radius: 50px;
+    margin-left: -30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 30px;
+    height:32px;
+    @include transition(0.75s easeInOutQuint all);
+    border:1px solid $subtle-gray;    
+}
+.toggle.off .toggle-handle {
+    border-radius: 50px;
+    margin-left: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    @include transition(0.75s easeInOutQuint all);
+    border:1px solid $light-gray;
+
+}
+
+.toggle.off label {
+    margin-left: 15px;
+    margin-right:0;
+}
+
+.toggle label {margin-right:15px;}
+
+.toggle .toggle-group label.btn{margin-bottom:0;}
+
+.btn-success{
+    color:$white;
+    background-color:$dpp-green;
+    @include transition(all 0.2s ease);
+    border:1px solid transparent;
+}
+.btn-success:hover{
+    @include transition(all 0.2s ease);
+    background-color:shade($dpp-green, 10%);
+    border:1px solid shade($dpp-green,15%);
+}
+.btn-danger{
+    color:$white;
+    background-color:$dpp-red;
+    @include transition(all 0.2s ease);
+    border:1px solid transparent;
+}
+.btn-danger:hover{
+    @include transition(all 0.2s ease);
+    background-color:shade($dpp-red, 10%);
+    border:1px solid shade($dpp-red,15%);
+
+}
+.toggle.btn.btn-danger.off .btn-success{
+    visibility: hidden;
+    opacity:0;
+    @include transition(0s ease all);
+}
+
+.toggle.btn.btn-success .btn-danger{
+    visibility: hidden;
+    opacity:0;
+    @include transition(0s ease all);
+}

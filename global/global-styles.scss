@@ -1,0 +1,219 @@
+/**Import Colors, Fonts, Mixins**/ 
+@import "colors";
+@import "fonts";
+@import "../mixins/_mixins";
+@import "../mixins/_responsive";
+
+//Import Bourbon
+@import "bourbon";
+
+//Define Global Variables//
+$base-font:11px;
+
+
+/**Bootstrap Overrides**/
+.panel {
+    margin-bottom:0;
+    background-color:transparent;
+    border:none;
+    border-radius:0;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+
+}
+.panel ul{
+    margin-bottom:0;
+}
+
+//Dropdown Toggle
+.open > .btn-default.dropdown-toggle {
+    background: $dpp-primary;
+    color: $white;
+    
+    &:focus, &:hover, &:active{
+        background:$dpp-primary;
+        color:$white;
+    }
+}
+.btn-default.dropdown-toggle{
+    background:transparent;
+    color:$gray;
+    
+    &:focus, &:hover, &:active{
+        background:$dpp-primary;
+        color:$white;
+        outline:none;
+    }
+}
+
+/**jQuery UI Overrides**/
+.ui-widget{font-family:Arial, sans-serif; font-size:inherit;}
+.ui-widget-header {
+    border: none;
+    background: none;
+    font-weight: inherit;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{font-family:Arial, sans-serif; font-size:inherit;}
+.ui-widget-content {
+    background: none;
+    border: none;
+    color: inherit;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+    padding:0;
+}
+div#lists .ui-tabs-nav .subtab .ui-tabs-anchor:focus {
+    outline: none;
+}
+
+
+/**Global Styles**/
+body{
+    font-size:$base-font;
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#404040;
+    line-height:normal;
+    min-height: 95vh;
+    font-weight:400;
+}
+
+div#pageHolder{overflow-y:auto; padding-bottom:30px;}
+div#appframe{overflow:visible;}
+
+a{
+    @include link();
+}
+a:hover{
+    @include link-hover();
+}
+.clear{
+    clear:both;
+}
+
+//DEFAULT.PHP OVERRIDES
+.green{
+    color:$status-active;
+}
+.red{
+    color:$dpp-red;
+}
+.gray{
+    color:$light-gray;
+}
+
+/**Buttons*/ 
+    /**Next Step**/
+            a.step, input.step, a.action, button.action {
+                @include action-btn();
+            }
+            a.step:hover, input.step:hover, a.action:hover, button.action:hover {
+                @include action-btn-hover();
+            }
+    /**Save**/
+            a.save, input.save, a.finish, button.save {
+                @include finish-btn();
+            }
+            a.save:hover, input.save:hover, a.finish:hover, button.save:hover {
+                @include finish-btn-hover();
+            }
+
+    /**Text-Delete**/
+            a.txt-delete, input.txt-delete, a.delete{
+                @include txt-btn-delete;
+            }
+            a.txt-delete:hover, input.txt-delete:hover, a.delete:hover{
+                @include txt-btn-delete-hover;
+            }
+    /**Text Button**/
+            a.txt-btn, a.text_btn{
+                @include txt-btn;
+            }
+            a.txt-btn:hover, a.text_btn:hover{
+                @include txt-btn-hover;
+            }
+
+    /**Block Buttons**/
+            a.btn-block{
+                @include action-btn-block;
+                
+                &:hover{
+                @include action-btn-block-hover();    
+                }
+            }
+
+/**Forms**/
+.form-control{
+    font-size:$base-font;
+}
+
+/**Status Indicators**/
+.status-active {
+    font-size: 1.15em;
+    font-family:$open-sans;
+    color: $gray;
+    padding: 0;
+    margin: 0;
+}
+
+.status-active:before {
+    font-size: 1.4em;
+    content: "\25CF";
+    color: $status-active;
+    margin-right: 5px;
+}
+
+.status-inactive {
+    font-size: 1.15em;
+    color: $gray;
+    padding: 0;
+    margin: 0;
+}
+
+.status-inactive:before {
+    font-size: 1.4em;
+    content: "\25CF";
+    color: $status-inactive;
+    margin-right: 5px;
+}
+
+
+//Override for Favoriting Functionality
+select#favs{
+    width:auto;
+    display:inline-block;
+}
+
+//Action Bar Override
+.snav h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    color: $dpp-primary;
+    margin-left: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+.snav #actions{
+    background:none;
+    border-bottom:1px solid $subtle-gray;
+}
+.snav #actions li a{
+    @include txt-btn;
+}
+.snav #actions li a:hover{
+    @include txt-btn-hover;
+}
+
+/**Input Groups**/
+.input-group-btn .btn-group .btn-default{
+    border:1px solid $subtle-gray;
+    color:$dpp-primary;
+        
+    &:hover, &:focus, &:active {
+        @include transition(0.2s ease all);
+        background:$dpp-primary;
+        color:white;
+    }
+}
+

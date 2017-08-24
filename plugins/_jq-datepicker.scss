@@ -1,0 +1,200 @@
+@import "../global/fonts";
+@import "../mixins/_mixins";
+
+/**jQueryUI DatePicker**/
+    .ui-datepicker{
+        &.ui-widget {
+            background: white;
+            border: 1px solid $subtle-gray;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+            width:auto;
+            
+            .ui-datepicker-buttonpane{
+                border-bottom: 1px solid $subtle-gray;
+
+            }
+            
+            button{
+                background: $dpp-primary;
+                color: $white;
+                font-size: 1em;
+                padding: 0.5em 2.25em;
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: auto;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                outline: none;
+            }
+            
+            table{
+                tbody{
+                    tr{
+                        td{
+                            a{
+                                background: transparent;
+                                color: $gray;
+                                padding:0.5em;
+                                @include transition(0.2s ease all);
+
+                                &.ui-state-active{
+                                    background:$dpp-primary;
+                                    color:$white;
+                                    border:1px solid $dpp-primary;
+                                }
+                                
+                                &.ui-state-highlight{
+                                    border:1px solid $dpp-primary;
+                                }
+
+                                &:hover{
+                                    background: $dpp-primary;
+                                    color:$white;
+                                    @include transition(0.2s ease all);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+//TimePicker
+
+#ui-datepicker-div{
+                .ui-datepicker-header.ui-widget-header{
+                    background:$dpp-primary;
+                    color:$white;
+                    font-family:$open-sans;
+                    font-size:1.25em;
+                    font-weight:700;
+                    @include user-select(none);
+                    
+                    .ui-datepicker-prev, .ui-datepicker-next{
+                        visibility: hidden;
+                        
+                        &:hover &:before{
+                        }
+                    }
+                    
+                    .ui-datepicker-prev{
+                        position:absolute;
+                        left:0;
+                        top:0;
+                        
+                        &:before{
+                            content: "\f053";
+                            font-family:"FontAwesome";
+                            color:$white;
+                            display:inline-block;
+                            visibility: visible;
+                            padding:1em;
+                            
+                        }
+                        &.ui-datepicker-prev-hover{
+                            left:0;
+                            top:0;
+                            border:none;
+                        }
+                    }
+                    .ui-datepicker-next{
+                        position:absolute;
+                        right:8px;
+                        top:8px;
+                        
+                        &:before{
+                            content: "\f054";
+                            font-family:"FontAwesome";
+                            color:$white;
+                            visibility: visible;
+                            padding:1em;
+                        }
+                        &.ui-datepicker-next-hover{
+                            right:8px;
+                            top:8px;
+                            border:none;
+                        }
+                    }
+                    
+                }
+                
+                .ui-timepicker-div{
+                    padding:0.75em;
+                
+                    dl{
+                        dt{
+                            padding:0 1em;
+                            font-size:1.1em;
+                            font-weight:600;
+                            margin-top:1.5em;
+
+                            &:first-of-type{
+                                margin-top:0.5em;
+                            }
+                        }
+                        dd{
+                            padding:0 1em;
+
+                            input{
+                                font-weight: 400;
+                                font-size: 1.75em;
+                                font-family: $open-sans;
+                                color:$dpp-primary;
+                            }
+                        }
+                    }
+                }
+                .ui_tpicker_second_label,.ui_tpicker_second,.ui_tpicker_millisec_label,.ui_tpicker_millisec,.ui_tpicker_microsec_label,.ui_tpicker_microsec,.ui_tpicker_timezone_label,.ui_tpicker_timezone{
+                    display:none;
+                }
+                
+                .ui_tpicker_hour,.ui_tpicker_minute{
+                        width: 90%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-top: 0.75em;
+                        margin-bottom: 0.75em;
+                    
+                    .ui_tpicker_hour_slider, .ui_tpicker_minute_slider{
+                        background: $silver;
+                        height: 6px;
+                        vertical-align: middle;
+                        
+                        .ui-slider-handle{
+                            background: $dpp-primary;
+                            outline: none;
+                            width: 1.5em;
+                            height: 1.5em;
+                            top: -0.5em;
+                            border-radius: 999px;
+                            border: none;
+                            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+                        } 
+                    }
+                }
+    .ui-datepicker-buttonpane{
+        padding: 1em;
+        border-bottom: none;
+        margin: 0;
+        border-top: 1px solid $silver;
+        overflow: auto;
+        
+        .ui-datepicker-close{
+            @include finish-btn;
+            
+            &:hover{
+                @include finish-btn-hover;
+            }
+        }
+        .ui-datepicker-current{
+            @include action-btn;
+            
+            &:hover{
+                @include action-btn-hover;
+            }
+        }
+    }
+            }

@@ -1,0 +1,125 @@
+@mixin link {
+    color:tint($dpp-primary, 15%);
+    font-family:$arial;
+    font-size:$base-font;
+    @include transition(0.2s ease all);
+}
+
+@mixin link-hover{
+    color:shade($dpp-primary, 15%);
+    @include transition(0.2s ease all);
+    text-decoration:none;
+}
+
+@mixin action-btn {
+                background-color: $dpp-primary;
+                border: 1px solid shade($dpp-primary, 10%);
+                padding:10px 20px;
+                border-radius:3px;
+                font-family:$open-sans;
+                font-size:14px;
+                font-weight:300;
+                color:$white;
+                text-transform:capitalize;
+                display:inline-block;
+                text-align:center;
+                cursor:pointer;
+                text-decoration:none;
+                margin:0;
+                opacity:0.85;
+                outline:none;
+                @include transition(all 0.2s ease);
+};
+@mixin action-btn-hover{
+                @include action-btn;
+                background-color:shade($dpp-primary, 5%);
+                opacity:1.0;
+                @include transition(all 0.2s ease);
+
+};
+@mixin finish-btn{
+                background-color: $dpp-green;
+                border: 1px solid shade($dpp-green, 10%);
+                padding:10px 20px;
+                border-radius:3px;
+                font-size:14px;
+                font-family:$open-sans;
+                font-weight:300;
+                color:$white;
+                text-transform:capitalize;
+                display:inline-block;
+                text-align:center;
+                cursor:pointer;
+                margin:0;
+                opacity:0.85;
+                outline:none;
+                @include transition(all 0.2s ease);
+
+};
+@mixin finish-btn-hover{
+                background-color:shade($dpp-green, 5%);
+                border:1px solid shade($dpp-green,10%);
+                opacity:1.0;
+                color:$white;
+                text-decoration:none;
+                @include transition(all 0.2s ease);
+};
+
+@mixin txt-btn{
+                background: none;
+                border: none;
+                color: $gray;
+                font-weight: normal;
+                text-decoration: underline;
+                text-transform:capitalize;
+                font-size: 12px;
+                @include transition(all 0.2s ease);
+                font-family:$open-sans;
+                font-weight:400;
+                opacity:0.8;
+                letter-spacing:-0.25px;
+                margin-right:1em;
+                cursor:pointer;
+};
+@mixin txt-btn-hover{
+                @include txt-btn;
+                color:$dpp-primary;
+                opacity:1.0;
+}
+
+@mixin txt-btn-delete{
+                @include txt-btn;
+                color:$dpp-red;
+                margin-right:1em;
+                margin-top:10px;
+}
+@mixin txt-btn-delete-hover{
+                @include txt-btn-hover;
+                color:darken($dpp-red, 5%);
+}
+
+
+//Full Width Block Buttons
+
+@mixin action-btn-block{
+                display:block;
+                padding:10px 20px;
+                border-radius:3px;
+                font-size:14px;
+                font-weight:300;
+                text-transform:capitalize;
+                display:inline-block;
+                text-align:center;
+                cursor:pointer;
+                text-decoration:none;
+                margin:0;
+                opacity:0.85;
+                outline:none;
+                @include transition(all 0.2s ease);
+}
+@mixin action-btn-block-hover{
+                @include action-btn-block;
+                display:block;
+                opacity:1.0;
+                @include transition(all 0.2s ease);
+}

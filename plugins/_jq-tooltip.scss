@@ -1,0 +1,9 @@
+.ui-tooltip.ui-widget{
+    background:#fff url("images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
+    border:1px solid #aaa;
+    color:#222;
+    @include box-shadow(0 0 5px #aaa);
+    padding:8px;
+    z-index:9999;
+    max-width:300px;
+}

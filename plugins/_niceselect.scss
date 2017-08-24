@@ -1,0 +1,28 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css";
+@import "../global/colors";
+
+/**NiceSelect Dropdown Plugin**/
+    .nice-select {
+    border: none;
+    font-size: 1.5em;
+    color: $dpp-primary;
+    padding: 0;
+    padding-right: 1.5em;
+    height: auto;
+    line-height: 2.25;
+}
+    .nice-select .current{background:none;color:$dpp-primary;}
+    .nice-select:after{color:$dpp-primary;border-bottom-color: $dpp-primary;border-right-color: $dpp-primary;}
+    .nice-select.open .list{box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.33);border-radius: 0;border: 1px solid #ddd; margin:0;}
+    .nice-select ul.list li {
+        font-size: 0.75em;
+        padding: 0.75em 1.5em;
+        margin: 0;
+        min-height: auto;
+        line-height: normal;
+        color: #666;
+    }
+    .nice-select ul.list li.selected {
+        color: $dpp-primary;
+    }
+

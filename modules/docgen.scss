@@ -1,0 +1,180 @@
+/* DPP Doc Gen Module Stylesheet File
+* Last Changed: 7/6/17
+* Author/Editor: D Shastry */
+
+
+/*Pull In HTML5 Reset, Global Styles, & Plugins Used in this Module*/
+@import "../global/colors";
+@import "../partials/normalize";
+@import "bourbon";
+//BEGIN Bootstrap//
+@import "../partials/bs/_bootstrap_min"; //Bootstrap Core Components only (Grid,Scaffolding, Buttons)//
+    //Specific Bootstrap Modules Used In This File
+@import "../partials/bs/bootstrap/_modals";
+@import "../partials/bs/bootstrap/_close";
+@import "../partials/bs/bootstrap/_progress-bars";
+//END Bootstrap//
+@import "../partials/forms";
+@import "../plugins/_bs-modal";
+@import "../plugins/_jq-datepicker";
+
+
+
+//Define The Table Modules Necessary & Import Them//
+$use-datatables:true;
+@import "../plugins//tables/_tables";
+@import "../global/global-styles";
+ 
+
+//DPP Interface Fixes to allow new SCSS to work with old interface
+@import "../global/_dpp-fixes";
+
+
+/**Module Specific Styles**/
+table.dataTable tbody tr.selected_template>td{
+    background-color:$dpp-primary;
+    cursor:pointer;
+    color:$white;
+}
+table.dataTable tbody tr.selected_template:hover>td{
+    background-color:$dpp-primary;
+    color:$white;
+    cursor:pointer;
+    @include transition (0.3s ease all);
+}
+
+/**Service Selection Tiles**/
+#docgen_container{
+    
+    .step-2{
+        &#after_container{
+            .tile{
+                    width: 50%;
+                    border: 1px solid $subtle-gray;
+                    padding:5% 10%;
+                    @include transition (0.2s ease-in-out all);
+                    height:12em;
+                    text-align:center;
+                    @include transition(0.2s ease all);
+
+                    &:hover{
+                        cursor:pointer;
+                        @include transition (0.2s ease-in-out all);
+                        background:$alabaster;
+                        transform:scale(1.05);
+                        box-shadow:2px 5px 5px rgba(0, 0, 0, 0.25);
+                        z-index:99;
+                    }
+
+                    &.disabled{
+                        background:$alabaster;
+                        color:$light-gray;
+                        cursor:not-allowed;
+                        order:1;
+
+                        svg{
+                            path,ellipse{
+                                fill:$light-gray;
+                                opacity:0.5;
+                            }
+                        }
+
+                        &:hover{
+                            transform:none;
+                            box-shadow:none;
+                        }
+                    }
+
+                    &.for_html_docs, &.not_for_html_docs{
+                        display:inline-block;
+                    }
+
+                    svg{
+                        width:12em;
+                        position:relative;
+                        top:50%;
+                        transform: translateY(-50%);
+                    }
+
+                    h5{
+                        flex: 0 0 100%;
+                    }
+
+                    &.docgen_active, &.docgen_active>svg path, &.docgen_active>svg ellipse{
+                        background:$dpp-primary;
+                        fill:$white;
+                        color:$white;
+                    }
+                }
+            h5{
+                padding: 15px 0 0 0;
+                font-family:$open-sans;
+                font-weight: 600;
+                color: $darkgray;
+                letter-spacing: -0.25px;
+                font-size:1em;
+            }
+            
+        }
+        
+        .tile_action_container{
+            display: flex;
+            align-content: stretch;
+            flex-wrap: wrap;
+        }
+    }
+    
+    .step-3{
+        table{
+            tr{
+                td{
+                    padding:0;
+                }
+            }
+        }
+    }
+    
+    .selected-doc-container, .modify_action_container{
+        
+        padding:0;
+        
+        h4{
+            padding: 15px 0 0 0;
+            margin-left:15px;
+            font-family:$open-sans;
+            font-weight: 600;
+            color: $darkgray;
+            letter-spacing: -0.25px;
+            font-size:1em;
+            
+        }
+        
+        p{
+            font-size: 1.75em;
+            font-family:$open-sans;
+            font-weight: 300;
+            margin-left: 15px;
+            margin-right:0.5em;
+            color:$gray;
+            display:inline-block;
+            
+            &:before{
+                content:"\f00c";
+                font-family:"FontAwesome";
+                color:$dpp-green;
+                font-size:0.5em;
+                vertical-align: middle;
+                margin-right:0.75em;
+            }
+        }
+        
+        a{
+            &:before{
+                content:"("
+            }
+            &:after{
+                content:")"
+            }
+        }
+    }
+}

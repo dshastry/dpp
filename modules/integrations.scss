@@ -1,0 +1,311 @@
+/* DPP Integrations Module Stylesheet File
+* Last Changed: 6/27/17
+* Author/Editor: D Shastry */
+
+
+/*Import Plugins, Mixins, etc used in this Module*/
+@import "../partials/normalize";
+@import "../global/colors";
+
+//BEGIN Bootstrap//
+@import "../partials/bs/_bootstrap_min";
+    //Specific Bootstrap Modules Used In This File
+@import "../partials/bs/bootstrap/_modals";
+@import "../partials/bs/bootstrap/_close";
+@import "../partials/bs/bootstrap/_progress-bars";
+//END Bootstrap//
+
+@import "../plugins/_split-panes";
+@import "../plugins/_alertify";
+@import "../plugins/_jq-tabs";
+@import "../plugins/_jq-autocomplete";
+@import "../plugins/_bs-duallistbox";
+@import "../plugins/_niceselect";
+@import "../plugins/_editable";
+@import "../plugins/_bs-toggle";
+@import "../plugins/_bs-modal";
+@import "../global/global-styles";
+
+//DPP Interface Fixes to allow new SCSS to work with old interface
+@import "../global/_dpp-fixes";
+  
+
+/**Module Specific Styles**/
+
+    /**Single Integration Page**/
+#integrations-tabs .col-md-6:first-of-type{
+    padding-left:0;
+}
+#integrations-tabs .col-md-6:nth-of-type(2){
+    padding-right:0;
+}
+
+.row-eq-height #form_body .col-md-12 .col-md-6:first-of-type {
+    padding: 0;
+}
+
+.row-eq-height #form_body .col-md-12 .row .col-md-12 {
+    padding: 0;
+}
+.row-eq-height .col-md-6 .toggle.btn {
+    float: right;
+}
+
+//Hack to counter the padding added by Bootstrap Columns and vertically align items
+.row .col-md-6 #integrations_search + .chosen-container{
+    margin-left:-15px;
+}
+
+.row-eq-height #form_body .settings_title {
+    font-size: 2em;
+    font-weight: 300;
+    font-family: $open-sans;
+    color: $darkgray;
+    outline:none;
+}
+
+    /**Integrations listing Page**/
+#integrations_form .row .row.row-eq-height{
+    min-height:75vh;
+}
+#integrations_form #form_body h4{
+    display:block;
+    flex:0 0 100%;
+    font-weight: 800;
+    letter-spacing: -0.25px;
+    font-size: 1em;
+    margin-top: 2.25em;
+    margin-left: 2.5em;
+}
+#integrations_form #form_body .single-service {
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+    @include transition(0.3s ease all);
+    border:1px solid transparent;
+}
+#integrations_form #form_body .single-service:hover{
+    @include transition(0.2s ease all);
+    transform:scale(1.05);
+    background:$alabaster;
+    border:1px solid $subtle-gray;
+    box-shadow:2px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+#integrations_form #form_body .single-service:nth-of-type(4n-3){
+    text-align:left;
+}
+#integrations_form #form_body .single-service:nth-of-type(4n-3) div:nth-of-type(2){
+    text-align:center;
+}
+#integrations_form #form_body .single-service div:first-of-type {
+    transform:scale(0.75);
+}
+#integrations_form #form_body .single-service div:first-of-type img {
+    width: 85%;
+    margin-bottom:0.5em;
+}
+#integrations_form #form_body .single-service:hover div:nth-of-type(2) {
+    visibility:visible;
+    @include transition(0.2s ease all);
+    opacity:1.0;
+    width:100%;
+    bottom:0;
+}
+#integrations_form #form_body .single-service:hover a{
+    text-decoration:none;
+    overflow: auto;
+}
+#integrations_form #form_body .single-service div:nth-of-type(2) {
+    visibility:hidden;
+    @include transition(0.2s ease all);
+    opacity:0;
+    border-top:1px solid #ccc;
+    background:$dpp-primary;
+    color:white;
+    padding-top:1em;
+    padding-bottom:1em;
+    font-family:$open-sans;
+    font-size:1em;
+    font-weight:800;
+    width:100%;
+    bottom:0;
+}
+
+#integrations_form #form_body #enabled #no_items h4{
+    font-weight: 200;
+    font-family: $open-sans;
+    font-size: 2em;
+    padding: 0;
+    margin: 0 1.33em;
+    color: $light-gray;
+    letter-spacing: -0.5px;
+}
+
+#integrations_form .row .col-md-6:first-of-type {
+    padding: 0;
+}
+
+#integrations_form #form_body #enabled, #integrations_form #form_body #inactive {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//Integration Listing Page Left Navigation Icons
+#integrations_form .left #sets .set_list li a[data-type="0"]:before{
+    content: "\f1e6";
+    color: $gray;
+    font-family: "FontAwesome";
+    margin-right: 1em;
+}
+#integrations_form .left #sets .set_list li a[data-type="1"]:before{
+    content: "\f283";
+    color: $gray;
+    font-family: "FontAwesome";
+    margin-right: 1em;
+}
+#integrations_form .left #sets .set_list li a[data-type="2"]:before{
+    content: "\f19c";
+    color: $gray;
+    font-family: "FontAwesome";
+    margin-right: 1em;
+}
+#integrations_form .left #sets .set_list li a[data-type="3"]:before{
+    content: "\f095";
+    color: $gray;
+    font-family: "FontAwesome";
+    margin-right: 1em;
+}
+#integrations_form .left #sets .set_list li a[data-type="4"]:before{
+    content: "\f2b6";
+    color: $gray;
+    font-family: "FontAwesome";
+    margin-right: 1em;
+}
+#integrations_form .left #sets .set_list li a[data-type="5"]:before{
+    content: "\f069";
+    color: $gray;
+    font-family: "FontAwesome";
+    margin-right: 1em;
+}
+//Disable text underline
+.row .left .set_list li a.set_name:hover{
+    text-decoration:none;
+}
+
+/**Service Not Active Modal**/
+#integration-disabled-alert.modal .modal-content .modal-header {
+    border-bottom: none;
+}
+
+#integration-disabled-alert.modal .modal-content .modal-header button.close span {
+    font-size: 1.5em;
+}
+
+#integration-disabled-alert.modal .modal-content .modal-body{
+    padding:10%;
+    text-align: center;
+    padding-top:2%;
+}
+#integration-disabled-alert.modal .modal-content .modal-body img {
+    width: 22em;
+    margin-bottom: 1em;
+    margin-top:1em;
+}
+
+#integration-disabled-alert.modal .modal-content .modal-body h2 {
+    font-family:$open-sans;
+    font-weight: 200;
+    font-size: 3.5em;
+    color: $dpp-primary;
+    letter-spacing: -2px;
+}
+
+#integration-disabled-alert.modal .modal-content .modal-body h4 {
+    color:$darkgray;
+    font-family:$arial;
+    font-size: 1.125em;
+    margin-bottom: 1.5em;
+}
+
+#integration-disabled-alert.modal .modal-content .modal-body p {
+    font-size: 1.125em;
+    color: $gray;
+    font-weight:normal;
+}
+
+/**Select a Set Message**/
+#form_body .integrations-message {
+    width: 50em;
+    text-align: center;
+    margin: 5% auto;
+}
+
+#form_body .integrations-message h2 {
+    font-family:$open-sans;
+    font-weight: 200;
+    color: $dpp-primary;
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+    line-height:1.0;
+}
+
+#form_body .integrations-message p {
+    font-size: 1.25em;
+    color: $gray;
+    font-weight: 200;
+    font-family: $open-sans;
+    line-height: 1.2;
+}
+
+#integrations_header{
+    padding-top:2.5em;
+    
+    &:after{
+        content:"";
+        width:100%;
+        display:block;
+        border-bottom:1px solid $subtle-gray;
+        margin-bottom:2.5em;
+        padding-bottom:2.5em;
+    }
+    .col-md-2{
+        padding:0;
+        margin:0;
+        margin-bottom:1.5em;
+        
+        img{
+            border:1px solid $subtle-gray;
+            width:100%;
+            padding:1em 3em;
+            margin-bottom:1.25em;
+        }
+    }
+    
+    .col-md-10{
+        padding-left:5em;
+                
+        h2{
+            font-family:$open-sans;
+            font-weight:600;
+            font-size:1.33em;
+            color:$darkgray;
+            line-height: 1;
+        }
+        
+        p{
+            font-family:$arial;
+            font-size:1.1em;
+            color:$gray;
+            width:65%;
+            line-height:1.5;
+            
+            &:first-of-type{
+                font-size:1em;
+                color:$light-gray;
+            }
+        }
+    }
+}

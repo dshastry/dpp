@@ -1,0 +1,197 @@
+@import "../global/fonts";
+@import "../mixins/_mixins";
+
+/**jQueryUI DatePicker**/
+    .ui-datepicker{
+        &.ui-widget {
+            background: white;
+            border: 1px solid $subtle-gray;
+            width:auto;
+            
+            .ui-datepicker-buttonpane{
+                border-bottom: 1px solid $subtle-gray;
+
+            }
+            
+            button{
+                background: $dpp-primary;
+                color: $white;
+                font-size: 1em;
+                padding: 0.5em 2.25em;
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: auto;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                outline: none;
+            }
+            
+            table{
+                tbody{
+                    tr{
+                        td{
+                            a{
+                                background: transparent;
+                                color: $gray;
+                                padding:0.5em;
+                                @include transition(0.2s ease all);
+
+                                &.ui-state-active{
+                                    background:$dpp-primary;
+                                    color:$white;
+                                    border:1px solid $dpp-primary;
+                                }
+                                
+                                &.ui-state-highlight{
+                                    border:1px solid $dpp-primary;
+                                }
+
+                                &:hover{
+                                    background: $dpp-primary;
+                                    color:$white;
+                                    @include transition(0.2s ease all);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+.comiseo-daterangepicker.ui-widget-content {
+    border:1px solid $subtle-gray;
+    box-shadow:3px 3px 10px rgba(0, 0, 0, 0.4);
+    background:$white;
+    padding:0;
+    
+    .comiseo-daterangepicker-main.ui-widget-content{
+        border-bottom:1px solid $subtle-gray;
+        
+        
+        .comiseo-daterangepicker-calendar{
+            padding:1.5em 2em;
+            
+            .ui-datepicker-inline{
+                width:auto !important; //Important to override the default width plugin adds via JS
+            }
+            .ui-datepicker-group{
+                width:auto;
+                margin-right:2.5em;
+                
+                .ui-datepicker-header{
+                    .ui-datepicker-title{
+                        font-weight:700;
+                        font-family:$open-sans;
+                        font-size:1.15em;
+                    }
+                    .ui-datepicker-prev{
+                        visibility:hidden;
+                        text-align:center;
+                        left:0;
+                        top:33%;
+                        @include transition(0.2s ease all);
+                        
+                        &:before{
+                            content:"\f053";
+                            font-family:"FontAwesome";
+                            visibility: visible;
+                        }
+                        &.ui-datepicker-prev-hover{
+                            left:0;
+                            border:none;
+                            color:$dpp-primary;
+                            @include transition(0.2s ease all);
+                        }
+                    }
+                        
+                    .ui-datepicker-next{
+                        visibility:hidden;
+                        text-align:center;
+                        right:0;
+                        top:33%;
+                        @include transition(0.2s ease all);
+                        
+                        &:before{
+                            content:"\f054";
+                            font-family:"FontAwesome";
+                            visibility: visible;
+                        }
+                        &.ui-datepicker-next-hover{
+                            right:0;
+                            border:none;
+                            color:$dpp-primary;
+                            @include transition(0.2s ease all);
+                        }
+                    }
+                }
+                
+                .ui-state-highlight a{
+                    background:$dpp-primary;
+                }
+            }
+        }
+        .comiseo-daterangepicker-presets{
+            padding:0;
+            
+            ul{
+                box-shadow:none;
+                border-left:1px solid $subtle-gray;
+                padding:0.75em 1.5em;
+                max-height:100%;
+                overflow-y:scroll;
+                
+                li{
+                    padding:0.25em 0;
+                    @include transition(0.2s ease all);
+                    border:1px solid transparent;
+                    margin:0;
+                    
+                    &:hover{
+                        text-decoration:none;
+                        @include transition(0.2s ease all);
+                    }
+                }
+            }
+        }
+    }
+    
+    .comiseo-daterangepicker-buttonpanel{
+        padding:1em;
+        
+        .ui-priority-primary{
+            @include finish-btn;
+            background:$dpp-green;
+            padding:2px 5px;
+            
+            &:hover{
+                @include finish-btn-hover;
+            }
+        }
+        .ui-priority-secondary{
+            @include txt-btn;
+            background:none;
+            float:left;
+            outline:none;
+            
+            &:hover{
+                @include txt-btn-hover;
+            }
+        }
+    }
+}
+
+.comiseo-daterangepicker-triggerbutton{
+    background:none;
+    padding:0.5em 0;
+    color:$dpp-primary;
+    outline:none;
+    @include transition(0.2s ease all);
+    
+    &:hover, &.comiseo-daterangepicker-active{
+        @include transition(0.2s ease all);
+        border:1px solid $dpp-primary;
+        background:none;
+    }
+}

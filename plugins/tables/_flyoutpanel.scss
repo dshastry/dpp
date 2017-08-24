@@ -1,0 +1,82 @@
+ @import "../../global/colors";
+
+    /**DEPENDENCIES**/
+                .panel-hide{display:none;}
+                .panel-show{display:block;}
+
+            /**Animation Definitions**/
+            $use-fadeInUp:true;
+            $use-fadeOutDown:true;
+            @import "../../partials/animate/_animate";
+
+                    /**FadeInUp**/
+                    @keyframes fadeInUp {
+                      from {
+                        opacity: 0;
+                        transform: translate3d(0, 20%, 0);
+                      }
+
+                      to {
+                        opacity: 1;
+                        transform: none;
+                      }
+                    }
+                    
+                    /**FadeOutDown**/
+                    @keyframes fadeOutDown {
+                      from {
+                        opacity: 0.9;
+                        transform: none;
+                      }
+
+                      to {
+                        opacity: 0;
+                        transform: translate3d(0, 10%, 0);
+                      }
+                    }
+
+@if $use-flyoutpanel == true {
+/**Flyout Panel**/
+.panel .showflyout {
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    right: 5.3%;
+    border: 1px solid #eaeaea;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.25);
+    min-width: 12em;
+    animation-duration:0.33s;
+    display:none;
+    
+    ul{
+        li {
+            border-bottom:1px solid #eaeaea;padding: 0.75em;
+            
+            &:last-child{
+                border-bottom:none;
+            }
+            
+            &:hover{
+                background-color:$dpp-primary;
+            }
+            
+            &:hover > a, &:hover > a i{
+                color:white;
+            }
+            
+            a{
+                text-align:left;
+                text-decoration:none;
+                color:$gray;
+                
+                i{
+                    transform: rotate(0deg);
+                    margin-right: 1em;
+                    color:$dpp-primary;
+                }
+            }
+        
+        }
+    }
+}
+}

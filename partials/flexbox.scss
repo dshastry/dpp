@@ -1,0 +1,68 @@
+@import "../global/colors";
+
+.grid2x2 {
+  min-height:100%;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+}
+
+.grid2x2 > a {
+  display:flex;
+  flex-basis:calc(50%);
+  justify-content:flex-start;
+}
+
+.grid2x2 > a > div {
+  justify-content:center;
+  flex-direction:row;
+  padding:1.5em;
+  width:100%;
+}
+
+.box {
+  margin:0;
+  border:1px solid #eaeaea;
+}
+
+.box h4 {
+  display:inline-block;
+  float:left;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+.box p {
+  display:inline-block;
+  width:100%;
+  float:left;
+  line-height:1.2;
+  color:#999;
+  padding:0;
+  margin-top:0.5em;
+}
+
+.qa:hover .dpp {
+  color:$dpp-primary;
+}
+
+.qa:hover {
+  border:1px solid $dpp-primary;
+}
+
+.qa:hover h4 {
+  color:$dpp-primary;
+}
+
+.qa:hover p {
+  color:$dpp-primary;
+}
+
+.qa:focus {
+  border:1px solid $dpp-primary;
+}
+
+.qa {
+  border:1px solid transparent;
+}

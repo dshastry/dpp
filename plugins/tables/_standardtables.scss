@@ -1,0 +1,119 @@
+ @import "../../global/colors";
+
+@if $use-standardtables == true {
+/**********STANDARD TABLES**********/
+/**Clear & Normalize Table Styles**/
+#tablelist .table{
+    margin:0;
+    padding:0;
+    outline:none;
+    box-sizing:border-box;
+}
+#tablelist .table thead, tbody{border:1px solid #eaeaea; border-top:none;}
+
+/**Table Headers**/
+#tablelist .listinline{border-bottom:none; padding-bottom:1.5em; padding-top:1.5em;}
+#tablelist .table{border-collapse:collapse;}
+#tablelist .table thead th {
+    background-color: #f5f7f9;
+    padding: 0;
+    padding-top: 1.3em;
+    padding-bottom: 1.3em;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    cursor:pointer;
+    border-bottom:none;
+    white-space:nowrap;
+}
+#tablelist .table thead th tr{
+    border-bottom:1px solid #eaeaea;
+}
+
+
+#tablelist .table thead th a{
+    font-size: 11px;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    color: #1e1e1e;
+    padding: 1.3em 1em;
+    margin: -1.3em -1em;
+    text-decoration:none;
+}
+
+#tablelist .table thead th:hover a{color:#BC3D16; transition:0.3s ease all;}
+
+#tablelist .table thead th i{color:#BC3D16;}
+
+#tablelist .listinline{text-align:right;}
+
+
+
+/**Table Body Contents**/
+#tablelist .table tbody tr td{padding-left:1.3em; vertical-align:middle; padding-top:10px; padding-bottom:10px; color:#666; font-size:1em;}
+#tablelist .table tbody tr td.row-title{font-weight:600; color:#BC3D16;}
+#tablelist .table tbody tr.dgEven{background-color:#f3f3f3 !important; border-top:#eaeaea 1px solid; border-bottom:#eaeaea 1px solid;}
+
+#tablelist .table tbody tr:hover > td, #tablelist .table tbody tr.dgEven:hover > td, #tablelist .table tbody tr:hover > td a, #tablelist .table tbody tr.dgEven:hover > td a {color:$gray;}
+#tablelist .table tr th:last-child{ padding-right:1.3em; border-right:1px solid #eaeaea}
+#tablelist .table tr td:last-child{ padding-right:1.3em; border-right:1px solid #eaeaea}
+#tablelist .table tfoot tr td:last-child{border-right:none;}
+
+/**Sticky Header**/
+div.stickyHeader {position:fixed; top:0; background-color:white; white-space:nowrap;}
+div.stickyHeader table{ border-collapse:collapse;}
+div.stickyHeader table th{text-align:left;padding-left:1.3em;padding-right:1.3em;}
+
+/**Pagination Options**/
+#tablelist .table tfoot .paging .showing{border-top:none; margin-top:1.5em;}
+.showing{
+    display: block;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+    padding-top: 1.5em;
+    color: #666;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+}
+
+.pagnum {
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 600;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#tablelist .pagnum a {
+    border: 1px solid #eaeaea;
+    font-size:11px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    float: left;
+    padding: 0.25em 0.75em;
+    text-decoration:none;
+    font-weight:400;
+    color:#BC3D16;
+}
+
+div#tablelist .pagnum a:hover, div#tablelist .pagnum a:hover i  {
+    background-color: #BC3D16;
+    transition: 0.2s ease all;
+    color: white;
+}
+
+div#tablelist .pagnum a i {
+    color: #BC3D16;
+    font-weight: 600;
+}
+
+div#tablelist .paginate_button{
+    color:#BC3D16;
+    font-size:11px;
+    border:1px solid #eaeaea;
+    padding:0.25em 0.75em;
+    display: inline-block;
+}
+div#tablelist .paginate_button.current{font-weight:600; color:#333; background:transparent;}
+}

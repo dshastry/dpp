@@ -1,0 +1,302 @@
+/* DPP Tables Stylesheet File
+* Last Changed: 8/24/17
+* Author/Editor: D Shastry */
+
+@import "../../global/colors";
+
+ 
+@if $use-datatables == true {
+
+/**Data Tables.js
+*
+*
+**/
+/**Clear & Normalize Table Styles**/
+table.dataTable thead th{
+    margin:0;
+    padding:0;
+    outline:none;
+    white-space:nowrap;
+}
+
+table.dataTable.display thead th h4{
+    margin:0;
+}
+table.dataTable thead th:hover > h4{
+    color:$dpp-primary ;
+    transition:0.3s ease all;
+}
+
+table.dataTable thead th:focus > h4{
+    color:$dpp-primary ;
+    transition:0.3s ease all;
+}
+
+table.dataTable thead th:active > h4{
+    color:$dpp-primary ;
+    transition:0.3s ease all;
+}
+table.dataTable{
+    margin-top:1.5em;
+    border:1px solid #eaeaea;
+}
+
+
+/**Table Headers**/
+table.dataTable thead th{
+    background-color:#f5f7f9;
+    cursor:pointer;
+}
+
+table.dataTable thead th h4{
+    font-size: 11px;
+    font-family:Arial, sans-serif;
+    padding-bottom: 1.3em;
+    padding-top: 1.3em;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+    color: #1e1e1e;
+    display: inline-block;
+    float: left;
+    margin:0;
+}
+table.dataTable thead th:first-child{
+    padding-left:1.65em;
+}
+
+table.dataTable thead th:last-child{
+    padding-right:1.65em;
+}
+table.dataTable thead th i{
+    float: left;
+    padding-top: 1em;
+    margin-left: 0.5em;
+    font-size:14px;
+}
+table.dataTable thead tr,table.dataTable thead tr th {
+    border-bottom:1px solid #eaeaea;
+}
+
+/**DATA TABLE SORTING**/
+.dataTable thead i {
+   font-size: 14px;
+}
+table.dataTable thead .sorting > i,
+table.dataTable thead .sorting_asc > i.fa-caret-down,
+table.dataTable thead .sorting_desc > i.fa-caret-up,
+table.dataTable thead .sorting_disabled > i {
+   display: none;
+}
+body table.dataTable thead th.sorting_asc, body table.dataTable thead th.sorting_desc{
+color:$dpp-primary;    
+}
+
+
+
+
+ 
+/**Table Rows**/
+table.dataTable tbody tr {
+cursor:text;
+}
+table.dataTable tbody td{
+    vertical-align: middle;
+    font-family:"Arial", sans-serif;
+    padding-bottom: 10px;
+    color: #666;
+    padding-top: 10px;
+    font-size: 1em;
+    padding-right:2em;
+}
+.dataTable tbody tr td:first-child{
+    padding-left:1.65em;
+}
+.dataTable tbody tr td:last-child{
+    padding-right:1.65em;
+}
+/**Table Striping**/
+table.dataTable.stripe tbody tr.even, table.dataTable tbody tr.even{
+    background-color:#f3f3f3;
+    border-top:1px solid #eaeaea;
+    border-bottom:1px solid #eaeaea;
+}
+
+    /**ROW HOVER BEHAVIOUR**/
+        table.dataTable.stripe tbody tr.even:hover > td, table.dataTable tbody tr.even:hover > td, table.dataTable.stripe tbody tr.odd:hover > td, table.dataTable tbody tr.odd:hover > td,table.dataTable.stripe tbody tr.even:hover > td .row-title, table.dataTable tbody tr.even:hover > td div.row-title,table.dataTable tbody tr.odd:hover > td div.row-title,  table.dataTable.stripe tbody tr.odd:hover > td div.row-title, table.dataTable tbody tr.even:hover > td .panel a i.fa-ellipsis-v, table.dataTable tbody tr.odd:hover > td .panel a i.fa-ellipsis-v{
+            background-color: inherit;
+        }
+
+.paginate_button:hover {
+    color: white;
+    background-color: $dpp-primary;
+    transition: 0.3s ease all;
+    text-decoration: none;
+}
+
+/**Row Title Item**/
+.row-title{
+    font-weight:600;
+    color: $dpp-primary;
+}
+
+/**Item Status Indicator**/
+.status-indicator{
+    width:auto;
+    height:auto;
+    margin-left:1em;
+}
+.status-indicator:before{
+    font-size: 1.4em;
+    content: "\25CF";
+}
+
+
+
+
+
+/**Table Controls**/
+.dataTables_info{
+    text-align: right;
+    margin-top: 1.5em;
+}
+a.paginate_button{
+    color:$dpp-primary;
+    font-size:11px;
+    border:1px solid #eaeaea;
+    padding:0.25em 0.75em;
+    display: inline-block;
+}
+.paginate_button:focus{outline:none;}
+.paginate_button.first:before {
+    content: "\f100";
+    font-family: "FontAwesome";
+}
+.paginate_button.previous:before {
+    content: "\f104";
+    font-family: "FontAwesome";
+}
+.paginate_button.next:before {
+    content: "\f105";
+    font-family: "FontAwesome";
+}
+.paginate_button.last:before {
+    content: "\f101";
+    font-family: "FontAwesome";
+}
+.paginate_button.current{background-color:transparent; color:#333; font-weight:600;}
+
+
+
+.dataTables_length{display:inline-block;}
+.dataTables_info{display:block;text-align:center;border-top: 1px solid #eaeaea;padding-top: 1.5em;margin-bottom: 0.5em; width:100%;}
+.dataTables_paginate{display:block;margin-left:auto;margin-right:auto;text-align: center;}
+
+/**Flyout ... Button**/
+table.dataTable .panel{
+    width:100%;
+    min-width:5em;
+}
+table.dataTable .panel a{
+    padding: 0.85em 1em;
+    margin: -0.85em -1em;
+    display:block;
+    text-align: center;
+}
+table.dataTable .panel i {
+    transform: rotate(90deg);
+}
+
+/**Sort & Filter Controls**/
+form .ui-selectmenu-button {
+    background: transparent;
+    border-radius: 0;
+    color: black;
+    font-size: 1em;
+    outline: none;
+}
+
+.ui-menu{border-radius:0;margin:0;border: 1px solid #ccc;box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.18); max-height: 50vh;}
+
+.ui-menu .ui-menu-item  {background:transparent;border-radius:0; padding:0.5em 1em;;}
+
+.ui-menu .ui-state-focus{color:$dpp-primary; background-color:#f2f2f2; border:1px solid #ccc; transition:0.15s ease color; text-decoration: underline;}
+
+
+/**Search Box**/
+//
+//.dataTables_filter label input {
+//    border: 1px solid #eaeaea;
+//    outline:none;
+//}
+//
+//.dataTables_filter label{
+//    float:right;
+//    overflow:auto;
+//    clear:both;
+//}
+//
+//.dataTables_filter {
+//    overflow: auto;
+//}
+//    
+/**Table Scrolls**/
+.dataTables_scrollBody table {
+    margin: 0;
+    border-top: none;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+//    text-align: left;
+//    background: none;
+//    border: none;
+//    overflow: hidden;
+//    margin: 0;
+//    float: left;
+//    width: 40%;
+//    font-size: 12px;
+//    margin-top: 0.35em;
+    visibility:hidden;
+}
+
+.dataTables_wrapper{
+    .dataTables_filter {
+        float: right;
+        padding: 0;
+        margin: 0;
+        
+        &:before{
+            content:"\f002 Search";
+            font-family:"FontAwesome";
+            visibility:visible;
+        }
+        
+        input[type="search"] {
+            display: inline-block;
+            box-shadow: none;
+            border:1px solid $subtle-gray;
+            float: left;
+            box-sizing: border-box;
+            padding:0;
+            font-size: 12px;
+            margin-left: 0;
+            margin-bottom: 0;
+            visibility:visible;
+        }
+    }
+}
+//Section Specific Overrides
+    //Contacts Module - 8/24/17 - Added due to row height issue on contacts module. Conflict with Contacts.css
+#viewcontact {
+    table.dataTable{
+        td {
+            padding:13px 2em 13px 0em;
+            vertical-align: middle;
+            
+            &:first-child{
+                padding-left:2em;
+            }
+        }
+    }
+}
+
+}

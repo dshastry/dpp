@@ -1,0 +1,328 @@
+/* DPP SMS Module Stylesheet File
+* Last Changed: 8/24/17
+* Author/Editor: D Shastry */
+
+/*Pull In HTML5 Reset, Global Styles, & Plugins Used in this Module*/
+@import "../global/colors";
+@import "../partials/normalize";
+//BEGIN Bootstrap//
+@import "../partials/bs/_bootstrap_min"; //Bootstrap Core Components only (Grid,Scaffolding, Buttons)//
+    //Specific Bootstrap Modules Used In This File
+@import "../partials/bs/bootstrap/_modals";
+@import "../partials/bs/bootstrap/_close";
+@import "../partials/bs/bootstrap/_progress-bars";
+@import "../partials/bs/bootstrap/_input-groups";
+@import "../partials/bs/bootstrap/_button-groups";
+@import "../partials/bs/bootstrap/_buttons";
+@import "../partials/bs/bootstrap/_dropdowns";
+
+
+//END Bootstrap//
+@import "../partials/forms"; 
+
+//Define The Table Modules Necessary & Import Them//
+$use-flyoutpanel:true;
+@import "../plugins/tables/_tables";
+
+//Plugins
+@import "../plugins/_bs-modal";
+@import "../plugins/_alertify";
+@import "../plugins/_bs-duallistbox"; 
+@import "../plugins/_bs-toggle";
+@import "../plugins/_niceselect";
+@import "../plugins/_jq-tabs";
+@import "../plugins/_jq-datepicker";
+@import "../global/global-styles";
+
+
+//DPP Interface Fixes to allow new SCSS to work with old interface
+@import "../global/_dpp-fixes";
+
+
+
+//Module Specific Styles//
+
+/**Nav Override**/
+.snav {
+    background: none;
+    margin: 0;
+    padding: 2em 1.5em;
+    padding-bottom: 0;
+    height: 60px; 
+}
+    /**Purchase A Number**/
+            div#new_numbers_frame {
+                max-height: 50vh;
+                overflow-y: scroll;
+                border: 1px solid #eaeaea;
+                overflow-x: hidden;
+            }
+            div#new_numbers_frame table thead tr {
+                background: #fafafa;
+            }
+
+            div#new_numbers_frame table {
+                margin-bottom: 0;
+            }
+
+            div#new_numbers_frame table th {
+                border-bottom: none;
+            }
+            div#new_numbers_frame table tbody tr td{padding:1em;margin:0; vertical-align:initial;}
+
+            div#new_numbers_frame table tbody tr td .add_num {
+                font-size: 1.25em;
+                margin-left: 0.75em;
+            }
+            div#new_numbers_frame table tbody tr td .remove_num {
+                font-size: 1.25em;
+                margin-left: 0.75em;
+                color:$dpp-primary;
+            }
+
+            div#new_numbers_frame table tbody tr:hover {
+                background-color: #fafafa;
+                transition: 0.3s ease all;
+            }
+
+            div#new_numbers_frame table tbody tr td p{font-size:1.25em; font-weight:600; color:#666; margin-bottom:0;}
+            div#new_numbers_frame table tbody tr td i{font-size:1.15em;}
+            div#cart table thead tr th {
+                border-bottom: none;
+            }
+
+            div#cart table thead tr {
+                border: 1px solid #eaeaea;
+                background: #fafafa;
+            }
+
+            div#cart table tbody .phone_numb{font-weight:600; margin:0;}
+            
+            .modal-content #counter1 span {
+                float: right;
+                font-weight: 600;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+                color: #2e364d;
+            }
+
+            .modal-content #counter1 span #count1 {
+                float: left;
+                margin-right: 0.4em;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+#buy_number_modal{
+    .modal-body{
+        &.step-1{
+            #selected_numbers_count_display{
+                float:right;
+                margin-top:1em;
+                font-size:1.125em;
+                font-family:$open-sans;
+            }
+        }
+    }
+}
+
+
+
+        /**Edit a Number Modal**/
+            #editnum .modal-body input {
+                margin-bottom: 1.5em;
+            }
+
+            #editnum .modal-body input#friendly_name {
+                width: 50%;
+                color: #333;
+                font-weight: 600;
+            }
+            
+            #editnum .modal-body .bootstrap-duallistbox-container input {
+                margin: 0;
+            }
+
+/**Create a Campaign Modal**/
+    /**Step 3 - Campaign Summary**/
+
+            .modal#new_campaign .step-3 #summary_cmpaign_name, #campaign_summary_from, #campaign_summary_template, #campaign_summary_list, #campaign_summary_body {font-size: 1.25em;margin-bottom: 1em; display:block;}
+            .modal#new_campaign .step-3 #campaign_summary_body{
+                border-bottom:1px solid #eaeaea;
+                padding-bottom:2.5em;
+                margin-bottom:2.5em;
+            }
+//            .modal#new_campaign .modal-body.step-3 input{
+//                display:inline-block;
+//                width: auto;
+//                margin-right: 0.75em;
+//                margin-bottom: 1em;
+//            }
+            .modal#new_campaign .modal-body.step-3 label{
+                font-size:1em;
+                font-family:$open-sans;
+                margin-bottom:0.5em;
+                display: inline-block;
+            }
+
+            .modal#new_campaign .modal-body.step-3 #campaign_schedule_div{
+                margin-left:5%;
+            }
+            .modal#new_campaign .modal-body.step-3 #campaign_schedule_div input+label{
+                font-size:1.125em;
+            }
+            .modal#new_campaign .modal-body.step-3 #campaign_schedule_div #schedule_once_datetime{
+                margin-left:7.5%;
+                margin-top:1em;
+            }
+            .modal#new_campaign .modal-body.step-3 #campaign_schedule_div #schedule_once_datetime label{
+                background:none;
+                display:block;
+                margin-bottom:0.33em;
+            }
+            .modal#new_campaign .modal-body.step-3 #campaign_schedule_selection label input {
+                float: left;
+                margin:0;
+                padding:0;
+                margin-right:1em;
+                margin-bottom: 2em;
+            }
+            .modal#new_campaign .modal-body.step-3 #campaign_schedule_selection label {
+                margin:0;
+                padding:0;
+                font-size: 1.25em;
+                cursor:pointer;
+            }
+.modal#new_campaign{
+    .modal-body.step-3{
+        #campaign_schedule_selection{
+            #schedule_recurring_datetime, #schedule_once_datetime{
+                margin-top:1em;
+                margin-left:2.75em;
+                
+                label{
+                    font-family:$open-sans;
+                    font-size:1em;
+                    margin-bottom:0.5em;
+                    display: inline-block;
+                }
+            }
+            
+        }
+    }
+}
+
+
+/**Edit Campaign Page**/
+
+.snav{
+    &.page_back{
+        padding:0;
+        
+        #actions{
+            padding-left:25px;
+        }
+    }
+}
+
+div#show_campaign h4:first-of-type, .detail-view-title{
+    font-size: 2em;
+    font-weight: 300;
+    font-family: $open-sans;
+    color: $darkgray;
+    outline: none;
+    margin-right:0.5em;
+    display:inline-block;
+}
+
+div#show_campaign h4:first-of-type~.txt-btn:after {
+    content: '';
+//    border-bottom: 1px solid #eaeaea;
+    width: 100%;
+    display: block;
+    padding-bottom: 1em;
+}
+
+#save_edit_campaign{
+    
+    label:not(.toggle-on, .toggle-off){
+        margin-top:1em;
+        font-size:0.95em;
+        font-family:$open-sans;
+        color:$darkgray;
+    }
+    
+    input[name="campaign_name"]{
+        width: 15em;
+        border: none;
+        border-radius: 0;
+        font-size: 2em;
+        font-weight: 300;
+        font-family: $open-sans;
+        border-bottom:2px dashed $dpp-primary;
+        padding:0;
+        padding-bottom:10px;
+        color:$darkgray;
+        
+    }
+    
+    .col-md-12{
+        &:first-of-type:after{
+            content:'';
+            border-bottom:1px solid $subtle-gray;
+            display: block;
+            margin-bottom:1em;
+        }
+        &:last-of-type{
+            text-align:right;
+        }
+    }
+    
+    .radio{
+        margin-left:-20px;
+    }
+}
+    
+    textarea[name="campaign_sms_message"]{
+        width:100%;
+        border:1px solid $subtle-gray;
+        border-radius: 4px;
+        min-height:10em;
+        max-width:100%;
+        outline:none;
+        @include transition(0.2s ease all);
+        padding:2em;
+        
+        &:hover{
+            @include transition(0.2s ease all);
+            border:1px solid $dpp-primary;
+        }
+    }
+
+#show_campaign{
+    label{
+        margin-top:1em;
+        font-size:0.95em;
+        font-family:$open-sans;
+        color:$darkgray;
+    }
+    
+    p, textarea{
+        font-size:1.33em;
+        font-family:$open-sans;
+        font-weight:400;
+        color:$gray;
+        background:transparent;
+    }
+    
+    .col-md-6{
+        &:last-of-type{
+            textarea{
+                width:100%;
+                resize:none;
+                border:none;
+                
+            }
+        }
+    }
+}

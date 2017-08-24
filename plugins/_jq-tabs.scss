@@ -1,0 +1,91 @@
+@import "../global/colors";
+@import "../global/fonts"; 
+@import "bourbon";
+
+/**Jquery UI Tabs Plugin**/
+
+div#lists {
+    display: block;
+}
+
+
+
+/**Create Button**/
+button.create-button{
+    background:$dpp-primary;
+    color:$white;
+    padding:1em;
+    outline:none;
+    border:none;
+    border-radius:0.66em;
+    font-size:1em;
+    float: right;
+    font-family:$open-sans;
+    margin-top:-5px;
+    @include transition(all 0.2s ease);
+}
+button.create-button i{
+    margin-right:8px;
+}
+button.create-button:hover{
+    background:darken($dpp-primary, 5%);
+    @include transition(all 0.2s ease);
+    cursor:pointer;
+}
+
+/**UI Tabs Table**/
+.ui-tabs .ui-tabs-panel{padding:1em 0;}
+/**SubTabs**/
+div#lists ul.ui-tabs-nav{display:inline-block; padding:0;}
+div#lists ul.ui-tabs-nav li.subtab a {
+    color: #5e666a;
+    padding-bottom: 7px;
+    margin-left:2.5em;
+    border-bottom: 2px solid transparent;
+    font-weight:600;
+    font-family:$open-sans;
+    font-size:1.15em;
+    }
+div#lists ul.ui-tabs-nav li.subtab:first-of-type{border:none;}
+div#lists ul.ui-tabs-nav li.subtab:first-of-type a {margin-left:0;}
+div#lists ul.ui-tabs-nav li.subtab:hover{cursor:pointer;}
+div#lists ul.ui-tabs-nav li.subtab a:hover{border-bottom:2px solid $dpp-primary;text-decoration:none;cursor:pointer;padding-bottom:7px;transition: 0.2s ease all;}
+div#lists ul.ui-tabs-nav li {margin: 0;}
+div#lists ul.ui-tabs-nav li:focus {outline:none;}
+
+/**Individual Tabs jQuery UI**/
+div#lists ul.ui-tabs-nav li.subtab a:first-of-type:after{font-size: 1.4em; content: ""; color: transparent;}
+div#lists ul.ui-tabs-nav li.subtab.ui-state-default:first-of-type {background: none;}
+div#lists ul.ui-tabs-nav li.subtab.ui-state-default:first-of-type:focus {outline: none;}
+div#lists ul.ui-tabs-nav li.subtab.active {background:none; border:none;}
+div#lists ul.ui-tabs-nav li.subtab.active a:before{font-size: 1.4em; content: "\25CF"; color:$status-active; margin-right:5px;}
+div#lists ul.ui-tabs-nav li.subtab.inactive {background:none; border:none;}
+div#lists ul.ui-tabs-nav li.subtab.inactive a:before{font-size: 1.4em; content: "\25CF"; color:$status-inactive; margin-right:5px;}
+div#lists ul.ui-tabs-nav li.subtab.sent {background:none; border:none;}
+div#lists ul.ui-tabs-nav li.subtab.sent a:before{font-size: 1.4em; content: "\25CF"; color:$status-sent; margin-right:5px;}
+div#lists ul.ui-tabs-nav li.subtab.draft {background:none; border:none;}
+div#lists ul.ui-tabs-nav li.subtab.draft a:before{font-size: 1.4em; content: "\25CF"; color:$status-draft; margin-right:5px;}
+div#lists ul.ui-tabs-nav li.subtab.ui-state-active {background:none; border:none;}
+div#lists ul.ui-tabs-nav li.subtab.ui-state-active a {border-bottom:2px solid $dpp-primary; padding-bottom:7px;}
+
+div#lists{
+    ul.ui-tabs-nav{
+        li.subtab{
+            &.deleted {
+                background:none;
+                border:none;
+                
+                a:before{
+                    font-size: 1.4em;
+                    content: "\25CF";
+                    color:$light-gray;
+                    margin-right:5px;
+                }
+            }
+            a.selected{
+                border-bottom:2px solid $dpp-primary;
+                @include transition(0.2s ease all);
+            }
+        }
+    }
+}

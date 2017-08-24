@@ -1,0 +1,48 @@
+@import "../global/colors";
+@import "../partials/_eq-height-rows"; 
+@import "../partials/forms"; 
+
+/**Pane Styles**/
+.row.ui-tabs{
+    margin-bottom:0;
+}
+.row .left.col-md-2 {
+    border: 1px solid $subtle-gray;
+    padding: 2.5em 2em;
+}
+.row .right.col-md-10 {
+    border: 1px solid $subtle-gray;
+    padding: 0.5em 0.5em;;
+}
+.row .left .set_list li a.set_name {
+    font-size: 1.33em;
+    color: $gray;
+    font-weight: 400;
+    font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+    font-size: 1.125em;
+    line-height: 1.25;
+    display: block;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    padding-left:1em;
+    border:1px solid transparent;
+    @include transition (0.2s ease all);
+}
+.row .left .set_list li{
+    padding:0.125em 0em;
+}
+.row .left .set_list li a.set_name:hover,.row .left .set_list li a.set_name.active {
+    color:$dpp-primary;
+    background-color:$alabaster;
+    transition:0.3s ease all;
+    border:1px solid $gallery;
+    @include transition (0.2s ease all);
+}
+.row .left h4 {
+    color: $darkgray;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    font-weight:800;
+}
+
